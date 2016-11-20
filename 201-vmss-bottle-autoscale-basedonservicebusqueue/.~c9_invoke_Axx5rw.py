@@ -20,7 +20,8 @@ def workerthread():
         # main loop to thrash the CPI
         while (keepworking == True):
             for x in range(1, 69):
-                global y = math.factorial(x)
+                y = math.factorial(x)
+                printData(y)
         time.sleep(3)
 
 
@@ -28,6 +29,8 @@ def workerthread():
 worker_thread = threading.Thread(target=workerthread, args=())
 worker_thread.start()
 
+# def printData(x):
+    return "<p>"+x+"</p>"
 
 def writebody():
     body = '<html><head><title>Work interface - build</title></head>'
@@ -37,7 +40,6 @@ def writebody():
         body += '<br/>Worker thread is not running. <a href="./do_work">Start work</a><br/>'
     else:
         body += '<br/>Worker thread is running. <a href="./stop_work">Stop work</a><br/>'
-        body += '<br/>'+y
 
     body += '<br/>Usage:<br/><br/>/do_work = start worker thread<br/>/stop_work = stop worker thread<br/>'
     body += '</h3></ul></body></html>'
