@@ -7,6 +7,15 @@ cp workserver.py $workserver_path
 apt-get -y update
 apt-get -y install python3-bottle
 
+#install pip
+apt-get install python-setuptools python-dev build-essential
+sudo easy_install pip
+sudo pip install --upgrade virtualenv
+
+#install azure
+pip install azure
+
+
 # create a service
 touch /etc/systemd/system/workserver.service
 printf '[Unit]\nDescription=workServer Service\nAfter=rc-local.service\n' >> /etc/systemd/system/workserver.service
