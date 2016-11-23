@@ -8,7 +8,7 @@ apt-get -y update
 apt-get -y install python3-bottle
 
 #install pip
-apt-get install python-setuptools python-dev build-essential
+apt-get -y install python-setuptools python-dev build-essential
 sudo easy_install pip
 sudo pip install --upgrade virtualenv
 
