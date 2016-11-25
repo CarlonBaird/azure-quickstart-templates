@@ -271,10 +271,9 @@
       }
     },
     {
-      "id":"[resourceId('Microsoft.Insights/webtests',parameters('webTestName'))]",
       "type": "Microsoft.Insights/autoscaleSettings",
       "apiVersion": "[variables('insightsApiVersion')]",
-      "name": "parameters('webTestName')",
+      "name": "autoscalehost",
       "location": "[variables('location')]",
       "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachineScaleSets/', parameters('vmSSName'))]"
