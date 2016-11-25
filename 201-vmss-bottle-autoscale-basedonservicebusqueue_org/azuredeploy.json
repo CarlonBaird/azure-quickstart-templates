@@ -176,7 +176,7 @@
         "virtualMachineProfile": {
           "storageProfile": {
             "osDisk": {
-              "vhdContainers": "",
+              "vhdContainers": "[]",
               "name": "[variables('osDiskName')]",
               "caching": "ReadOnly",
               "createOption": "FromImage"
