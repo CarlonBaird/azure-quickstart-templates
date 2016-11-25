@@ -270,6 +270,7 @@
       }
     },
     {
+      "id":"[resourceId('Microsoft.Insights/webtests', "autoscalehost")]"
       "type": "Microsoft.Insights/autoscaleSettings",
       "apiVersion": "[variables('insightsApiVersion')]",
       "name": "autoscalehost",
