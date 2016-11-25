@@ -13,7 +13,7 @@ Simple self-contained Ubuntu autoscale example which includes a Python Bottle se
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 </a>
-<a href="http://armviz.io/" target="_blank">
+<a href="http://armviz.io/#/?load=https://raw.githubusercontent.com/CarlonBaird/azure-quickstart-templates/master/201-vmss-bottle-autoscale-basedonservicebusqueue_org/azuredeploy.json" target="_blank">
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
