@@ -39,6 +39,16 @@
   "variables": {
     "location": "[resourceGroup().location]",
     "defaultSASKeyName": "RootManageSharedAccessKey",
+    "storageAccountType": "Standard_LRS",
+    "saCount": 1,
+    "newStorageAccountSuffix": "[concat(parameters('vmssName'), 'sa')]",
+    "uniqueStringArray": [
+      "[concat(uniqueString(concat(resourceGroup().id, variables('newStorageAccountSuffix'), '0')))]",
+    ],
+    "vhdContainerName": "[concat(parameters('vmssName'), 'vhd')]",
+    "vhdContainerArray": [
+      "[concat('https://', variables('uniqueStringArray')[0], variables('newStorageAccountSuffix'), '.blob.core.windows.net/', variables('vhdContainerName'))]",
+    ],
     "osDiskName": "[concat(parameters('vmssName'), 'osdisk')]",
     "addressPrefix": "10.0.0.0/16",
     "subnetPrefix": "10.0.0.0/24",
@@ -176,7 +186,7 @@
         "virtualMachineProfile": {
           "storageProfile": {
             "osDisk": {
-              "vhdContainers": "[]",
+              "vhdContainers": "[take(variables('vhdContainerArray'), variables('saCount'))]",
               "name": "[variables('osDiskName')]",
               "caching": "ReadOnly",
               "createOption": "FromImage"
