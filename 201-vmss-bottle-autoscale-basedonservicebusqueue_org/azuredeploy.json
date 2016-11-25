@@ -2,7 +2,7 @@
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
   "contentVersion": "1.0.0.0",
   "parameters": {  
-    "webTestName": { "type": "string" }
+    "webTestName": { "type": "string" },
     "vmSku": {
       "type": "string",
       "defaultValue": "Standard_A1",
@@ -271,7 +271,7 @@
       }
     },
     {
-      "id":"[resourceId('Microsoft.Insights/webtests', parameters('webTestName'))]"
+      "id":"[resourceId('Microsoft.Insights/webtests', parameters('webTestName'))]",
       "type": "Microsoft.Insights/autoscaleSettings",
       "apiVersion": "[variables('insightsApiVersion')]",
       "name": "autoscalehost",
