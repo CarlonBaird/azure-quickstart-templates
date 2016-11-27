@@ -313,7 +313,7 @@
       ],
       "properties": {
         "name": "autoscalehost",
-        "targetResourceUri": "/subscriptions/90a101f3-88fc-467e-ad0d-0852d1afebb9/resourcegroups/carlonbaird/providers/Microsoft.ServiceBus/namespaces/ServiceBusN2/queues/sbqtest",
+        "targetResourceUri": "[concat('/subscriptions/',subscription().subscriptionId, '/resourceGroups/',  resourceGroup().name, '/providers/Microsoft.Compute/virtualMachineScaleSets/', parameters('vmSSName'))",
         "enabled": true,
         "profiles": [
           {
