@@ -2,6 +2,25 @@
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "serviceBusSku": {
+            "type": "string",
+            "allowedValues": [
+                "Basic",
+                "Standard",
+                "Premium"
+            ],
+            "defaultValue": "Standard",
+            "metadata": {
+                "description": "The messaging tier for service Bus namespace"
+            }
+        },
+        "serviceBusApiVersion": {
+            "type": "string",
+            "defaultValue": "2015-08-01",
+            "metadata": {
+                "description": "Service Bus ApiVersion used by the template"
+            }
+        },
     "vmSku": {
       "type": "string",
       "defaultValue": "Standard_A1",
@@ -38,7 +57,11 @@
   },
   "variables": {
     "location": "[resourceGroup().location]",
+    "sbVersion": "[parameters('serviceBusApiVersion')]"
+    "serviceBusNamespaceName":"ServiceBusN2",
     "defaultSASKeyName": "RootManageSharedAccessKey",
+    "defaultAuthRuleResourceId": "[resourceId('Microsoft.ServiceBus/namespaces/authorizationRules', variables('serviceBusNamespaceName'), variables('defaultSASKeyName'))]",
+    "authRuleResourceId": "[resourceId('Microsoft.ServiceBus/namespaces/authorizationRules', variables('serviceBusNamespaceName'), variables('defaultSASKeyName'))]",
     "storageAccountType": "Standard_LRS",
     "saCount": 1,
     "newStorageAccountSuffix": "[concat(parameters('vmssName'), 'sa')]",
@@ -333,5 +356,15 @@
         ]
       }
     }
-  ]
+  ],
+  "outputs": {
+      "NamespaceConnectionString": {
+          "type": "string",
+          "value": "[listkeys(variables('authRuleResourceId'), variables('sbVersion')).primaryConnectionString]"
+      },
+      "SharedAccessPolicyPrimaryKey": {
+          "type": "string",
+          "value": "[listkeys(variables('authRuleResourceId'), variables('sbVersion')).primaryKey]"
+      }
+  }
 }
