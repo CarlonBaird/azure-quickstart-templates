@@ -366,5 +366,15 @@
         ]
       }
     }
-  ]
+  ],
+    "outputs": {
+      "NamespaceConnectionString": {
+          "type": "string",
+          "value": "[listkeys(variables('authRuleResourceId'), variables('sbVersion')).primaryConnectionString]"
+      },
+      "SharedAccessPolicyPrimaryKey": {
+          "type": "string",
+          "value": "[listkeys(variables('authRuleResourceId'), variables('sbVersion')).primaryKey]"
+      }
+  }
 }
