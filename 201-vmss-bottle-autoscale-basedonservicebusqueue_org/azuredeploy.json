@@ -313,7 +313,7 @@
       ],
       "properties": {
         "name": "autoscalehost",
-        "targetResourceUri": "/subscriptions/90a101f3-88fc-467e-ad0d-0852d1afebb9/resourcegroups/carlonbaird/providers/Microsoft.ServiceBus/namespaces/ServiceBusN2/queues/sbqtest/overview",
+        "targetResourceUri": "/subscriptions/90a101f3-88fc-467e-ad0d-0852d1afebb9/resourcegroups/carlonbaird/providers/Microsoft.ServiceBus/namespaces/ServiceBusN2/queues/sbqtest",
         "enabled": true,
         "profiles": [
           {
@@ -328,7 +328,7 @@
                  "metricTrigger": {
                   "metricName": "MessageCount",
                   "metricNamespace": "",
-                  "metricResourceUri": "/subscriptions/90a101f3-88fc-467e-ad0d-0852d1afebb9/resourcegroups/carlonbaird/providers/Microsoft.ServiceBus/namespaces/ServiceBusN2/queues/sbqtest/overview",
+                  "metricResourceUri": "/subscriptions/90a101f3-88fc-467e-ad0d-0852d1afebb9/resourcegroups/carlonbaird/providers/Microsoft.ServiceBus/namespaces/ServiceBusN2/queues/sbqtest",
                   "timeGrain": "PT1M",
                   "statistic": "Average",
                   "timeWindow": "PT5M",
