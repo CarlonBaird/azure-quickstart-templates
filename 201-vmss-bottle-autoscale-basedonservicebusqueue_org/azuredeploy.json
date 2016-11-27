@@ -71,7 +71,7 @@
     "sbVersion": "[parameters('serviceBusApiVersion')]",
     "serviceBusNamespaceName":"ServiceBusN2",
     "defaultSASKeyName": "RootManageSharedAccessKey",
-    "defaultAuthRuleResourceId": "[resourceId('Microsoft.ServiceBus/namespaces/authorizationRules', parameters('serviceBusNamespaceName'), variables('defaultSASKeyName'))]",
+    "defaultAuthRuleResourceId": "[resourceId('Microsoft.ServiceBus/namespaces/authorizationRules',parameters('serviceBusNamespaceName'), variables('defaultSASKeyName'))]",
     "authRuleResourceId": "[resourceId('Microsoft.ServiceBus/namespaces/authorizationRules', parameters('serviceBusNamespaceName'), variables('defaultSASKeyName'))]",
     "storageAccountType": "Standard_LRS",
     "saCount": 1,
