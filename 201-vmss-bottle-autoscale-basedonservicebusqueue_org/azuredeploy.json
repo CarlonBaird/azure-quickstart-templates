@@ -12,7 +12,8 @@
             "type": "string",
             "metadata": {
                 "description": "Name of the Service Bus namespace"
-            },
+            }
+     },
     "serviceBusSku": {
             "type": "string",
             "allowedValues": [
